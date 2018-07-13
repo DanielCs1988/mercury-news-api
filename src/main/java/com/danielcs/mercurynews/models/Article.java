@@ -46,4 +46,16 @@ public abstract class Article {
     public String getPublishedAt() {
         return publishedAt;
     }
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "author='" + author + '\'' +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", url='" + url + '\'' +
+                ", urlToImage='" + urlToImage + '\'' +
+                ", publishedAt='" + publishedAt + '\'' +
+                '}';
+    }
 }

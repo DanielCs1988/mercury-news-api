@@ -19,4 +19,13 @@ public class NewsResultWrapper {
     public List<ArticleSource> getArticles() {
         return articles;
     }
+
+    @Override
+    public String toString() {
+        return "NewsResultWrapper{" +
+                "status='" + status + '\'' +
+                ", totalResults=" + totalResults +
+                ", articles=" + articles +
+                '}';
+    }
 }
