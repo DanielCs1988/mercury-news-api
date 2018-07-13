@@ -43,7 +43,7 @@ public class HttpRequest {
         queryParams.put("components", "country:" + code);
         String result = http.getWithQuery(GEOLOC_API_ENDPOINT, queryParams);
         Matcher matcher = getJsonMatcher(
-                result, "formatted_address:\"([a-zA-Z-]+)\".*location\":\\{\"lat\":([\\d.-]+),\"lng\":([\\d.-]+)", true
+                result, "formatted_address\":\"([a-zA-Z-]+)\".*location\":\\{\"lat\":([\\d.-]+),\"lng\":([\\d.-]+)", true
         );
         if (matcher.find()) {
             return new Geolocation(
