@@ -17,15 +17,15 @@ import java.util.stream.Collectors;
 @Component
 public class HttpRequest {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(HttpRequest.class);
-    private static final String NEWS_API_ENDPOINT = "https://newsapi.org/v2/top-headlines";
-    private static final String NEWS_API_KEY = System.getenv("NEWS_API_KEY");
-    private static final String GEOLOC_API_ENDPOINT = "https://maps.googleapis.com/maps/api/geocode/json";
-    private static final String GEOLOC_API_KEY = System.getenv("GEOLOC_API_KEY");
-    private static final String WEATHER_API_URL = System.getenv("WEATHER_API_URL");
+    public static final Logger LOGGER = LoggerFactory.getLogger(HttpRequest.class);
+    public static final String NEWS_API_ENDPOINT = "https://newsapi.org/v2/top-headlines";
+    public static final String NEWS_API_KEY = System.getenv("NEWS_API_KEY");
+    public static final String GEOLOC_API_ENDPOINT = "https://maps.googleapis.com/maps/api/geocode/json";
+    public static final String GEOLOC_API_KEY = System.getenv("GEOLOC_API_KEY");
+    public static final String WEATHER_API_URL = System.getenv("WEATHER_API_URL");
 
     @HttpRequestAssembler
-    private HttpRequestSender http;
+    public HttpRequestSender http;
 
     public List<ArticleDTO> fetchArticles(Map<String, String> options) {
         options.put("apiKey", NEWS_API_KEY);
@@ -87,7 +87,6 @@ public class HttpRequest {
         if (shouldCompress) {
             json = json.replaceAll("\\s", "");
         }
-        System.out.println(json);
         return Pattern.compile(regex).matcher(json);
     }
 

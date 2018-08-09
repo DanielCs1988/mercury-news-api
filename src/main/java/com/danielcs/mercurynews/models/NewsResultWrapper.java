@@ -8,6 +8,12 @@ public class NewsResultWrapper {
     private int totalResults;
     private List<ArticleSource> articles;
 
+    public NewsResultWrapper(String status, int totalResults, List<ArticleSource> articles) {
+        this.status = status;
+        this.totalResults = totalResults;
+        this.articles = articles;
+    }
+
     public String getStatus() {
         return status;
     }

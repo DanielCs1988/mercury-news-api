@@ -29,4 +29,14 @@ public class Weather {
     public double getTemperature() {
         return temperature;
     }
+
+    @Override
+    public String toString() {
+        return "Weather{" +
+                "location='" + location + '\'' +
+                ", summary='" + summary + '\'' +
+                ", icon='" + icon + '\'' +
+                ", temperature=" + temperature +
+                '}';
+    }
 }

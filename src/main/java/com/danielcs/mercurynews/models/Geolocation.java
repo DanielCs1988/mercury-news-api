@@ -1,5 +1,7 @@
 package com.danielcs.mercurynews.models;
 
+import java.util.Objects;
+
 public class Geolocation {
 
     private String location;
@@ -22,5 +24,14 @@ public class Geolocation {
 
     public double getLongitude() {
         return longitude;
+    }
+
+    @Override
+    public String toString() {
+        return "Geolocation{" +
+                "location='" + location + '\'' +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
+                '}';
     }
 }
